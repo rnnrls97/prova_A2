@@ -1,0 +1,35 @@
+@base_url = http://localhost:5124/api
+
+# FUNCIONÁRIO ######################################
+
+### Criação de um novo funcionário
+POST {{base_url}}/funcionario/cadastrar
+Content-Type: application/json
+
+{
+    "nome": "Joao",
+    "cpf" : "222222222222"
+}
+
+### Obtenção de todos os funcionários
+GET {{base_url}}/funcionario/listar
+
+# FOLHA ############################################
+
+### Criação de uma nova folha
+POST {{base_url}}/folha/cadastrar
+Content-Type: application/json
+
+{
+    "valor": 40,
+    "quantidade" : 144,
+    "mes" : 10,
+    "ano" : 2023,
+    "funcionarioId" : 5
+}
+
+### Obtenção de todas as folhas
+GET {{base_url}}/folha/listar
+
+### Obtenção de uma folha
+GET {{base_url}}/folha/buscar/222222222222/10/2023
